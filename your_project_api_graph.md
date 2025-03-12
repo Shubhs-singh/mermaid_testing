@@ -1,118 +1,184 @@
 ```mermaid
-graph TD;
-    extract_text_from_pdf["🔧 extract_text_from_pdf"] --> style extract_text_from_pdf fill:#b3d9ff;
-    to_lowercase["🔧 to_lowercase"] --> style to_lowercase fill:#b3d9ff;
-    find_word["🔧 find_word"] --> style find_word fill:#b3d9ff;
-    classify_pages["🔧 classify_pages"] --> style classify_pages fill:#b3d9ff;
-    split_pdf_by_dict["🔧 split_pdf_by_dict"] --> style split_pdf_by_dict fill:#b3d9ff;
-    pdf_to_images["🔧 pdf_to_images"] --> style pdf_to_images fill:#b3d9ff;
-    unknown_get_pixmap["🌐 unknown.get_pixmap"] --> style unknown_get_pixmap fill:#b3ffb3;
-    pdf_bytes_to_images["🔧 pdf_bytes_to_images"] --> style pdf_bytes_to_images fill:#b3d9ff;
-    detect_logo_regions["🔧 detect_logo_regions"] --> style detect_logo_regions fill:#b3d9ff;
-    crop_logo_regions["🔧 crop_logo_regions"] --> style crop_logo_regions fill:#b3d9ff;
-    extract_text_from_logos["🔧 extract_text_from_logos"] --> style extract_text_from_logos fill:#b3d9ff;
-    get_hsn_from_description["🔧 get_hsn_from_description"] --> style get_hsn_from_description fill:#b3d9ff;
-    get_hsn_code_from_inv_text["🔧 get_hsn_code_from_inv_text"] --> style get_hsn_code_from_inv_text fill:#b3d9ff;
-    extract_hsn_from_plain_text["🔧 extract_hsn_from_plain_text"] --> style extract_hsn_from_plain_text fill:#b3d9ff;
-    setup_model["🔧 setup_model"] --> style setup_model fill:#b3d9ff;
-    os_getenv["🌐 os.getenv"] --> style os_getenv fill:#b3ffb3;
-    rename_df_columns["🔧 rename_df_columns"] --> style rename_df_columns fill:#b3d9ff;
-    get_pdf_files["🔧 get_pdf_files"] --> style get_pdf_files fill:#b3d9ff;
-    get_invoice_data_using_pre_built_invoice["🔧 get_invoice_data_using_pre_built_invoice"] --> style get_invoice_data_using_pre_built_invoice fill:#b3d9ff;
-    get_max_item_amt_grpd_inv_no_date["🔧 get_max_item_amt_grpd_inv_no_date"] --> style get_max_item_amt_grpd_inv_no_date fill:#b3d9ff;
-    checklist_json_get["🌐 checklist_json.get"] --> style checklist_json_get fill:#b3ffb3;
-    unknown_get["🌐 unknown.get"] --> style unknown_get fill:#b3ffb3;
-    standard_data_get["🌐 standard_data.get"] --> style standard_data_get fill:#b3ffb3;
-    gst_get_customer_gst_using_regex["🌐 gst.get_customer_gst_using_regex"] --> style gst_get_customer_gst_using_regex fill:#b3ffb3;
-    po_get_po_number_based_on_checklist["🌐 po.get_po_number_based_on_checklist"] --> style po_get_po_number_based_on_checklist fill:#b3ffb3;
-    gst_get_vendor_gst_based_on_checklist["🌐 gst.get_vendor_gst_based_on_checklist"] --> style gst_get_vendor_gst_based_on_checklist fill:#b3ffb3;
-    item_data_get["🌐 item_data.get"] --> style item_data_get fill:#b3ffb3;
-    hsn_get_hsn_from_description["🌐 hsn.get_hsn_from_description"] --> style hsn_get_hsn_from_description fill:#b3ffb3;
-    get_std_fields_for_max_gross_amount["🔧 get_std_fields_for_max_gross_amount"] --> style get_std_fields_for_max_gross_amount fill:#b3d9ff;
-    hsn_get_hsn_code_from_inv_text["🌐 hsn.get_hsn_code_from_inv_text"] --> style hsn_get_hsn_code_from_inv_text fill:#b3ffb3;
-    process_in_batches["🔧 process_in_batches"] --> style process_in_batches fill:#b3d9ff;
-    get_hsn_tds_batch["🔧 get_hsn_tds_batch"] --> style get_hsn_tds_batch fill:#b3d9ff;
-    classify_expense_gpt["🔧 classify_expense_gpt"] --> style classify_expense_gpt fill:#b3d9ff;
-    map_results_to_dataframe["🔧 map_results_to_dataframe"] --> style map_results_to_dataframe fill:#b3d9ff;
-    get_checklist_specific_fields["🔧 get_checklist_specific_fields"] --> style get_checklist_specific_fields fill:#b3d9ff;
-    filter_invoices_based_on_checklist_fields["🔧 filter_invoices_based_on_checklist_fields"] --> style filter_invoices_based_on_checklist_fields fill:#b3d9ff;
-    json_data_get["🌐 json_data.get"] --> style json_data_get fill:#b3ffb3;
-    get_gst_fields["🔧 get_gst_fields"] --> style get_gst_fields fill:#b3d9ff;
-    get_standard_gst_fields["🌐 get_standard_gst_fields"] --> style get_standard_gst_fields fill:#b3ffb3;
-    map_columns_with_gpt["🔧 map_columns_with_gpt"] --> style map_columns_with_gpt fill:#b3d9ff;
-    extract_and_merge_dataframes["🔧 extract_and_merge_dataframes"] --> style extract_and_merge_dataframes fill:#b3d9ff;
-    preprocess_image["🔧 preprocess_image"] --> style preprocess_image fill:#b3d9ff;
-    extract_irn_from_pdf["🔧 extract_irn_from_pdf"] --> style extract_irn_from_pdf fill:#b3d9ff;
-    page_get["🌐 page.get"] --> style page_get fill:#b3ffb3;
-    check_if_rcm_tag_available_in_invoice["🔧 check_if_rcm_tag_available_in_invoice"] --> style check_if_rcm_tag_available_in_invoice fill:#b3d9ff;
-    get_doc_category["🔧 get_doc_category"] --> style get_doc_category fill:#b3d9ff;
-    pdf_bytes_getvalue["🌐 pdf_bytes.getvalue"] --> style pdf_bytes_getvalue fill:#b3ffb3;
-    get_access_token["🌐 get_access_token"] --> style get_access_token fill:#b3ffb3;
-    requests_post["🌐 requests.post"] --> style requests_post fill:#b3ffb3;
-    fetch_supplier_name["🌐 fetch_supplier_name"] --> style fetch_supplier_name fill:#b3ffb3;
-    requests_get["🌐 requests.get"] --> style requests_get fill:#b3ffb3;
-    response_data_get["🌐 response_data.get"] --> style response_data_get fill:#b3ffb3;
-    add_supplier_names_column["🔧 add_supplier_names_column"] --> style add_supplier_names_column fill:#b3d9ff;
-    fetch_invoice_details_using_qr_string["🔧 fetch_invoice_details_using_qr_string"] --> style fetch_invoice_details_using_qr_string fill:#b3d9ff;
-    get_name["🔧 get_name"] --> style get_name fill:#b3d9ff;
-    correct_gstin_format["🔧 correct_gstin_format"] --> style correct_gstin_format fill:#b3d9ff;
-    is_valid_gstin["🔧 is_valid_gstin"] --> style is_valid_gstin fill:#b3d9ff;
-    validate_gstin_checksum["🔧 validate_gstin_checksum"] --> style validate_gstin_checksum fill:#b3d9ff;
-    get_vendor_gst_based_on_checklist["🔧 get_vendor_gst_based_on_checklist"] --> style get_vendor_gst_based_on_checklist fill:#b3d9ff;
-    get_customer_gst_using_regex["🔧 get_customer_gst_using_regex"] --> style get_customer_gst_using_regex fill:#b3d9ff;
-    get_po_number_based_on_checklist["🔧 get_po_number_based_on_checklist"] --> style get_po_number_based_on_checklist fill:#b3d9ff;
-    validate_po_based_on_file_name["🔧 validate_po_based_on_file_name"] --> style validate_po_based_on_file_name fill:#b3d9ff;
-    clean_and_convert_series["🔧 clean_and_convert_series"] --> style clean_and_convert_series fill:#b3d9ff;
-    process_invoice_amounts["🔧 process_invoice_amounts"] --> style process_invoice_amounts fill:#b3d9ff;
-    get_auth_token["🔧 get_auth_token"] --> style get_auth_token fill:#b3d9ff;
-    get_invoice_details["🔧 get_invoice_details"] --> style get_invoice_details fill:#b3d9ff;
-    to_lowercase -.-> find_word;
-    classify_pages --> to_lowercase;
-    classify_pages --> find_word;
-    pdf_to_images ==> unknown_get_pixmap;
-    pdf_bytes_to_images ==> unknown_get_pixmap;
-    get_hsn_code_from_inv_text --> extract_hsn_from_plain_text;
-    setup_model ==> os_getenv;
-    get_invoice_data_using_pre_built_invoice --> get_max_item_amt_grpd_inv_no_date;
-    get_invoice_data_using_pre_built_invoice ==> checklist_json_get;
-    get_invoice_data_using_pre_built_invoice ==> unknown_get;
-    get_invoice_data_using_pre_built_invoice ==> standard_data_get;
-    get_invoice_data_using_pre_built_invoice ==> gst_get_customer_gst_using_regex;
-    get_invoice_data_using_pre_built_invoice ==> po_get_po_number_based_on_checklist;
-    get_invoice_data_using_pre_built_invoice ==> gst_get_vendor_gst_based_on_checklist;
-    get_invoice_data_using_pre_built_invoice ==> item_data_get;
-    get_invoice_data_using_pre_built_invoice ==> hsn_get_hsn_from_description;
-    get_invoice_data_using_pre_built_invoice --> get_std_fields_for_max_gross_amount;
-    get_invoice_data_using_pre_built_invoice ==> hsn_get_hsn_code_from_inv_text;
-    get_max_item_amt_grpd_inv_no_date -.-> get_max_item_amt_grpd_inv_no_date;
-    get_max_item_amt_grpd_inv_no_date -.-> get_std_fields_for_max_gross_amount;
-    process_in_batches --> get_hsn_tds_batch;
-    process_in_batches --> classify_expense_gpt;
-    filter_invoices_based_on_checklist_fields ==> json_data_get;
-    get_gst_fields --> extract_and_merge_dataframes;
-    get_standard_gst_fields --> map_columns_with_gpt;
-    extract_and_merge_dataframes --> get_standard_gst_fields;
-    extract_irn_from_pdf ==> page_get;
-    check_if_rcm_tag_available_in_invoice ==> page_get;
-    get_doc_category ==> pdf_bytes_getvalue;
-    get_doc_category --> preprocess_image;
-    get_access_token ==> requests_post;
-    get_access_token ==> unknown_get;
-    get_access_token -.-> fetch_supplier_name;
-    fetch_supplier_name ==> requests_get;
-    fetch_supplier_name ==> unknown_get;
-    fetch_supplier_name ==> response_data_get;
-    add_supplier_names_column --> get_access_token;
-    add_supplier_names_column --> fetch_supplier_name;
-    fetch_invoice_details_using_qr_string ==> requests_post;
-    fetch_invoice_details_using_qr_string ==> response_data_get;
-    get_name --> get_access_token;
-    get_name --> fetch_supplier_name;
-    is_valid_gstin --> validate_gstin_checksum;
-    get_vendor_gst_based_on_checklist --> is_valid_gstin;
-    get_customer_gst_using_regex --> is_valid_gstin;
-    process_invoice_amounts --> clean_and_convert_series;
-    get_auth_token ==> requests_post;
-    get_auth_token ==> unknown_get;
-    get_invoice_details ==> requests_post;
+graph TD
+    node_7521111["🔧 extract_text_from_pdf"]
+    style node_7521111 fill:#b3d9ff
+    node_568999["🔧 to_lowercase"]
+    style node_568999 fill:#b3d9ff
+    node_2571628["🔧 find_word"]
+    style node_2571628 fill:#b3d9ff
+    node_930312["🔧 classify_pages"]
+    style node_930312 fill:#b3d9ff
+    node_116845["🔧 split_pdf_by_dict"]
+    style node_116845 fill:#b3d9ff
+    node_9701828["🔧 pdf_to_images"]
+    style node_9701828 fill:#b3d9ff
+    node_6149880["🌐 unknown.get_pixmap"]
+    style node_6149880 fill:#b3ffb3
+    node_2948579["🔧 pdf_bytes_to_images"]
+    style node_2948579 fill:#b3d9ff
+    node_926323["🔧 detect_logo_regions"]
+    style node_926323 fill:#b3d9ff
+    node_7800899["🔧 crop_logo_regions"]
+    style node_7800899 fill:#b3d9ff
+    node_14743362["🔧 extract_text_from_logos"]
+    style node_14743362 fill:#b3d9ff
+    node_7812467["🔧 get_hsn_from_description"]
+    style node_7812467 fill:#b3d9ff
+    node_15244654["🔧 get_hsn_code_from_inv_text"]
+    style node_15244654 fill:#b3d9ff
+    node_7803633["🔧 extract_hsn_from_plain_text"]
+    style node_7803633 fill:#b3d9ff
+    node_15819702["🔧 setup_model"]
+    style node_15819702 fill:#b3d9ff
+    node_6469533["🌐 os.getenv"]
+    style node_6469533 fill:#b3ffb3
+    node_4527510["🔧 rename_df_columns"]
+    style node_4527510 fill:#b3d9ff
+    node_11606657["🔧 get_pdf_files"]
+    style node_11606657 fill:#b3d9ff
+    node_3359937["🔧 get_invoice_data_using_pre_built_invoice"]
+    style node_3359937 fill:#b3d9ff
+    node_7901486["🔧 get_max_item_amt_grpd_inv_no_date"]
+    style node_7901486 fill:#b3d9ff
+    node_15076349["🌐 checklist_json.get"]
+    style node_15076349 fill:#b3ffb3
+    node_2268102["🌐 unknown.get"]
+    style node_2268102 fill:#b3ffb3
+    node_3044285["🌐 standard_data.get"]
+    style node_3044285 fill:#b3ffb3
+    node_16665068["🌐 gst.get_customer_gst_using_regex"]
+    style node_16665068 fill:#b3ffb3
+    node_2208030["🌐 po.get_po_number_based_on_checklist"]
+    style node_2208030 fill:#b3ffb3
+    node_15155677["🌐 gst.get_vendor_gst_based_on_checklist"]
+    style node_15155677 fill:#b3ffb3
+    node_6715875["🌐 item_data.get"]
+    style node_6715875 fill:#b3ffb3
+    node_11357158["🌐 hsn.get_hsn_from_description"]
+    style node_11357158 fill:#b3ffb3
+    node_9508948["🔧 get_std_fields_for_max_gross_amount"]
+    style node_9508948 fill:#b3d9ff
+    node_11211656["🌐 hsn.get_hsn_code_from_inv_text"]
+    style node_11211656 fill:#b3ffb3
+    node_1747970["🔧 process_in_batches"]
+    style node_1747970 fill:#b3d9ff
+    node_15201497["🔧 get_hsn_tds_batch"]
+    style node_15201497 fill:#b3d9ff
+    node_13210312["🔧 classify_expense_gpt"]
+    style node_13210312 fill:#b3d9ff
+    node_276053["🔧 map_results_to_dataframe"]
+    style node_276053 fill:#b3d9ff
+    node_15052965["🔧 get_checklist_specific_fields"]
+    style node_15052965 fill:#b3d9ff
+    node_5035752["🔧 filter_invoices_based_on_checklist_fields"]
+    style node_5035752 fill:#b3d9ff
+    node_13051912["🌐 json_data.get"]
+    style node_13051912 fill:#b3ffb3
+    node_9667513["🔧 get_gst_fields"]
+    style node_9667513 fill:#b3d9ff
+    node_403024["🌐 get_standard_gst_fields"]
+    style node_403024 fill:#b3ffb3
+    node_11071751["🔧 map_columns_with_gpt"]
+    style node_11071751 fill:#b3d9ff
+    node_6665005["🔧 extract_and_merge_dataframes"]
+    style node_6665005 fill:#b3d9ff
+    node_16730912["🔧 preprocess_image"]
+    style node_16730912 fill:#b3d9ff
+    node_9254960["🔧 extract_irn_from_pdf"]
+    style node_9254960 fill:#b3d9ff
+    node_6213332["🌐 page.get"]
+    style node_6213332 fill:#b3ffb3
+    node_7305430["🔧 check_if_rcm_tag_available_in_invoice"]
+    style node_7305430 fill:#b3d9ff
+    node_1669711["🔧 get_doc_category"]
+    style node_1669711 fill:#b3d9ff
+    node_16193406["🌐 pdf_bytes.getvalue"]
+    style node_16193406 fill:#b3ffb3
+    node_4274051["🌐 get_access_token"]
+    style node_4274051 fill:#b3ffb3
+    node_11048294["🌐 requests.post"]
+    style node_11048294 fill:#b3ffb3
+    node_7848838["🌐 fetch_supplier_name"]
+    style node_7848838 fill:#b3ffb3
+    node_4323348["🌐 requests.get"]
+    style node_4323348 fill:#b3ffb3
+    node_1860581["🌐 response_data.get"]
+    style node_1860581 fill:#b3ffb3
+    node_15181552["🔧 add_supplier_names_column"]
+    style node_15181552 fill:#b3d9ff
+    node_3121755["🔧 fetch_invoice_details_using_qr_string"]
+    style node_3121755 fill:#b3d9ff
+    node_14723950["🔧 get_name"]
+    style node_14723950 fill:#b3d9ff
+    node_775105["🔧 correct_gstin_format"]
+    style node_775105 fill:#b3d9ff
+    node_14337381["🔧 is_valid_gstin"]
+    style node_14337381 fill:#b3d9ff
+    node_5318938["🔧 validate_gstin_checksum"]
+    style node_5318938 fill:#b3d9ff
+    node_5239206["🔧 get_vendor_gst_based_on_checklist"]
+    style node_5239206 fill:#b3d9ff
+    node_607557["🔧 get_customer_gst_using_regex"]
+    style node_607557 fill:#b3d9ff
+    node_6069674["🔧 get_po_number_based_on_checklist"]
+    style node_6069674 fill:#b3d9ff
+    node_11229987["🔧 validate_po_based_on_file_name"]
+    style node_11229987 fill:#b3d9ff
+    node_15663455["🔧 clean_and_convert_series"]
+    style node_15663455 fill:#b3d9ff
+    node_607681["🔧 process_invoice_amounts"]
+    style node_607681 fill:#b3d9ff
+    node_1942760["🔧 get_auth_token"]
+    style node_1942760 fill:#b3d9ff
+    node_8809595["🔧 get_invoice_details"]
+    style node_8809595 fill:#b3d9ff
+    node_568999 -.-> node_2571628
+    node_930312 --> node_568999
+    node_930312 --> node_2571628
+    node_9701828 ==> node_6149880
+    node_2948579 ==> node_6149880
+    node_15244654 --> node_7803633
+    node_15819702 ==> node_6469533
+    node_3359937 --> node_7901486
+    node_3359937 ==> node_15076349
+    node_3359937 ==> node_2268102
+    node_3359937 ==> node_3044285
+    node_3359937 ==> node_16665068
+    node_3359937 ==> node_2208030
+    node_3359937 ==> node_15155677
+    node_3359937 ==> node_6715875
+    node_3359937 ==> node_11357158
+    node_3359937 --> node_9508948
+    node_3359937 ==> node_11211656
+    node_7901486 -.-> node_7901486
+    node_7901486 -.-> node_9508948
+    node_1747970 --> node_15201497
+    node_1747970 --> node_13210312
+    node_5035752 ==> node_13051912
+    node_9667513 --> node_6665005
+    node_403024 --> node_11071751
+    node_6665005 --> node_403024
+    node_9254960 ==> node_6213332
+    node_7305430 ==> node_6213332
+    node_1669711 ==> node_16193406
+    node_1669711 --> node_16730912
+    node_4274051 ==> node_11048294
+    node_4274051 ==> node_2268102
+    node_4274051 -.-> node_7848838
+    node_7848838 ==> node_4323348
+    node_7848838 ==> node_2268102
+    node_7848838 ==> node_1860581
+    node_15181552 --> node_4274051
+    node_15181552 --> node_7848838
+    node_3121755 ==> node_11048294
+    node_3121755 ==> node_1860581
+    node_14723950 --> node_4274051
+    node_14723950 --> node_7848838
+    node_14337381 --> node_5318938
+    node_5239206 --> node_14337381
+    node_607557 --> node_14337381
+    node_607681 --> node_15663455
+    node_1942760 ==> node_11048294
+    node_1942760 ==> node_2268102
+    node_8809595 ==> node_11048294
 ```
